@@ -1,0 +1,47 @@
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  margin-top: 32px;
+}
+
+input,
+textarea {
+  background: var(--fondo-2);
+  border: 1px solid #333;
+  color: var(--texto);
+  padding: 14px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--dorado);
+}
+
+button {
+  background: var(--dorado);
+  color: #111;
+  border: none;
+  padding: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ok {
+  color: #7fd18b;
+}
+
+.err {
+  color: #e57373;
+}

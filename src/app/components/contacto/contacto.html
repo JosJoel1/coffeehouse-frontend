@@ -1,0 +1,16 @@
+<section id="contacto" class="seccion">
+  <p class="sub">Escríbenos</p>
+  <h2>Contacto</h2>
+  <form class="formulario" (ngSubmit)="enviar()" #f="ngForm">
+    <input name="nombre" [(ngModel)]="nombre" placeholder="Tu nombre" required maxlength="100" />
+    <input name="email" type="email" [(ngModel)]="email" placeholder="Tu email" required maxlength="100" />
+    <textarea name="mensaje" [(ngModel)]="mensaje" placeholder="Tu mensaje" rows="5" required maxlength="2000"></textarea>
+    <button type="submit" [disabled]="f.invalid || estado() === 'enviando'">Enviar mensaje</button>
+    @if (estado() === 'ok') {
+      <p class="ok">¡Mensaje enviado! Te responderemos pronto.</p>
+    }
+    @if (estado() === 'error') {
+      <p class="err">No se pudo enviar. Revisa los datos e inténtalo de nuevo.</p>
+    }
+  </form>
+</section>

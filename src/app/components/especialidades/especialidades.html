@@ -1,0 +1,15 @@
+<section id="especialidades" class="seccion">
+  <p class="sub">De la casa</p>
+  <h2>Especialidades</h2>
+  <div class="grid">
+    @for (e of lista(); track e.id) {
+      <article class="tarjeta">
+        @if (e.imagen) {
+          <img [src]="e.imagen" [alt]="e.nombre" style="width:100%;margin-bottom:12px" />
+        }
+        <h3>{{ e.nombre }}</h3>
+        <p>{{ e.descripcion }}</p>
+      </article>
+    }
+  </div>
+</section>

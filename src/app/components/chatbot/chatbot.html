@@ -1,0 +1,21 @@
+<button class="burbuja" (click)="abierto.set(!abierto())" aria-label="Abrir chat">
+  {{ abierto() ? '✕' : '💬' }}
+</button>
+
+@if (abierto()) {
+  <div class="ventana">
+    <div class="cabecera">Asistente CoffeeHouse</div>
+    <div class="mensajes">
+      @for (m of mensajes(); track $index) {
+        <div class="msg" [class.yo]="m.de === 'yo'">{{ m.texto }}</div>
+      }
+      @if (cargando()) {
+        <div class="msg">Escribiendo...</div>
+      }
+    </div>
+    <form class="entrada" (ngSubmit)="enviar()">
+      <input name="pregunta" [(ngModel)]="pregunta" placeholder="Escribe tu pregunta..." autocomplete="off" />
+      <button type="submit">➤</button>
+    </form>
+  </div>
+}

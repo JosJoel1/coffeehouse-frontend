@@ -1,1 +1,79 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@1,700&display=swap');
+
+:root {
+  --dorado: #c9a45c;
+  --fondo: #0b0b0b;
+  --fondo-2: #151515;
+  --texto: #f2efe9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+}
+.seccion {
+  padding: 96px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.seccion h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.seccion .sub {
+  color: var(--dorado);
+  letter-spacing: 0.3em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.tarjeta {
+  background: var(--fondo-2);
+  border: 1px solid #2a2a2a;
+  padding: 28px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  border-color: var(--dorado);
+}
+
+.tarjeta h3 {
+  margin: 0 0 10px;
+  color: var(--dorado);
+}
+
+.tarjeta p {
+  margin: 0;
+  color: #cfcac0;
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .seccion {
+    padding: 64px 20px;
+  }
+}

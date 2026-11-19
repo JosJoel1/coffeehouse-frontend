@@ -1,0 +1,16 @@
+<section id="nosotros" class="seccion">
+  <p class="sub">Nuestra historia</p>
+  <h2>Nosotros</h2>
+  @if (datos(); as d) {
+    <p style="max-width:700px;line-height:1.8;color:#cfcac0;margin-top:24px">{{ d.historia }}</p>
+    @if (d.foto) {
+      <img [src]="d.foto" alt="CoffeeHouse" style="max-width:100%;margin-top:24px" />
+    }
+    <div class="grid">
+      <article class="tarjeta"><h3>Dirección</h3><p>{{ d.direccion }}</p></article>
+      <article class="tarjeta"><h3>Teléfono</h3><p>{{ d.telefono }}</p></article>
+      <article class="tarjeta"><h3>Email</h3><p>{{ d.email }}</p></article>
+      <article class="tarjeta"><h3>Horario</h3><p>{{ d.horario }}</p></article>
+    </div>
+  }
+</section>

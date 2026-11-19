@@ -1,0 +1,18 @@
+<section id="precios" class="seccion">
+  <p class="sub">Nuestro menú</p>
+  <h2>Precios</h2>
+  @for (g of grupos(); track g.categoria) {
+    <h3 class="categoria">{{ g.categoria }}</h3>
+    <ul class="lista">
+      @for (p of g.items; track p.id) {
+        <li>
+          <div>
+            <strong>{{ p.titulo }}</strong>
+            <span>{{ p.descripcion }}</span>
+          </div>
+          <b class="precio">Bs {{ p.precio }}</b>
+        </li>
+      }
+    </ul>
+  }
+</section>

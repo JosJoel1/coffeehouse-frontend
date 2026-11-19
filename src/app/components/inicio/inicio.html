@@ -1,0 +1,22 @@
+<section id="inicio" class="hero">
+  @if (datos(); as d) {
+    @if (d.video) {
+      <video class="fondo" [src]="d.video" autoplay muted loop playsinline></video>
+    }
+    <div class="capa"></div>
+    <div class="contenido">
+      <p class="eyebrow"><span class="linea"></span>COCHABAMBA · BOLIVIA<span class="linea"></span></p>
+      <h1>
+        @for (p of palabras(d.titulo); track $index) {
+          <span [class.dorado]="$index === 1">{{ p }} </span>
+        }
+      </h1>
+      <p class="subtitulo">{{ d.subtitulo }}</p>
+      <a href="#precios" class="boton">Explorar menú</a>
+    </div>
+  } @else if (error()) {
+    <div class="contenido">
+      <p class="subtitulo">No se pudo conectar con el servidor. ¿Está corriendo el backend?</p>
+    </div>
+  }
+</section>
